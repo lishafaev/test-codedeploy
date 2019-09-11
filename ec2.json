@@ -108,9 +108,9 @@
                     "Ref": "KeyName"
                 },
                 "SecurityGroupIds": [
-                    "Ref": "SecurityGroupID"
+                    {"Ref": "SecurityGroupID"}
                 ],
-                "SubnetId": "Ref": "SubnetId",
+                "SubnetId": {"Ref": "SubnetId"},
                 "UserData": {
                     "Fn::Base64": "80"
                 }
