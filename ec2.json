@@ -81,6 +81,14 @@
         "KeyName": {
             "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance",
             "Type": "String"
+        },
+        "SecurityGroupID": {
+            "Description": "Id of security group",
+            "Type": "String"
+        },
+        "SubnetId": {
+            "Description": "Id of the VPC subnet",
+            "Type": "String"
         }
     },
     "Resources": {
@@ -100,9 +108,9 @@
                     "Ref": "KeyName"
                 },
                 "SecurityGroupIds": [
-                    "sg-c8bce3ac"
+                    "Ref": "SecurityGroupID"
                 ],
-                "SubnetId": "subnet-e9dcdf9e",
+                "SubnetId": "Ref": "SubnetId",
                 "UserData": {
                     "Fn::Base64": "80"
                 }
